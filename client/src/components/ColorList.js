@@ -43,7 +43,7 @@ const ColorList = props => {
       .then(res => {
         console.log("edit", res);
         setEditing(false);
-        updateColors([...colors, colorToEdit]);
+        updateColors(colors.filter(cv => cv.id !== colorToEdit.id))
       })
       .catch(err => console.log("fat put err", err));
   };
@@ -54,7 +54,7 @@ const ColorList = props => {
     axiosWithAuth()
       .delete(`/colors/${color.id}`)
       .then(res => {
-        console.log("delete", res);
+        updateColors(colors.filter(cv => cv.id !== color.id))
       })
       .catch(err => console.log("fat delete err", err));
   };

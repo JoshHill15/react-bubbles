@@ -19,6 +19,16 @@ function AddColor(props) {
             props.updateColors([...props.colors, values])
         })
         .catch(err => console.log)
+        .finally(() => {
+            setValues({
+                ...values,
+                color: "",
+                code: {
+                    ...values.code,
+                    hex: ""
+                }
+            })
+        })
     }
 
   return (
