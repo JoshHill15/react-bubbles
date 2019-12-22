@@ -11,7 +11,7 @@ const initialColor = {
 
 const ColorList = props => {
   const { colors, updateColors } = props;
-  console.log("colors list", colors);
+  // console.log("colors list", colors);
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
 
